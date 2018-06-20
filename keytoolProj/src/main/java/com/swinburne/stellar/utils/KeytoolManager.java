@@ -15,8 +15,8 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class KeytoolManager {
 	KeyStore ks = null;
-	String keyStorePassword = "canvas2018";
-	String keypass = "keypass2018";
+	String keyStorePassword = "filepass2018";
+	String keypass = "entrypass2018";
 	javax.crypto.SecretKey mySecretKey;
 	KeyStore.PrivateKeyEntry pkEntry ;
 	KeyStore.ProtectionParameter protParam;
@@ -34,9 +34,9 @@ public class KeytoolManager {
 		
 		try {
 			ktm.loadJKSFile();
-//ktm.addToken("11386~2v9YQlCGR2AzQY8guraXlV53bmtwJJVBZtfDewXLpUExXF7DzWigEF7tCpx1JlOV" , 
-//		ktm.keyStorePassword, "adminKey30");
-			ktm.readToken("adminKey30");
+//ktm.addToken("keyval" , 
+//		ktm.keyStorePassword, "key30");
+			ktm.readToken("Key30");
 		} catch (KeyStoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -132,7 +132,7 @@ public class KeytoolManager {
 		// store away the keystore
 		java.io.FileOutputStream fos = null;
 		try {
-			fos = new java.io.FileOutputStream("C:\\\\Users\\\\mmohammed\\\\eclipse-workspace\\\\keytoolProj\\\\src\\\\main\\\\resources\\\\myjks.jks");
+			fos = new java.io.FileOutputStream(".\\\\keytoolProj\\\\src\\\\main\\\\resources\\\\myjks.jks");
 			ks.store(fos, tokenPass.toCharArray());
 		} catch (KeyStoreException e) {
 			// TODO Auto-generated catch block
